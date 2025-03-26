@@ -1,0 +1,20 @@
+{
+  "name": "jrbackend/router",
+  "description": "A simple routing system, with all the Restfull verbs. Middleware and named routes support",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Junior Matos",
+      "email": "juniormatosphp@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Source\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=8.4"
+  }
+}
