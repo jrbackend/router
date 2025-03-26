@@ -14,7 +14,7 @@ require __DIR__ . "/App/Middlewares/Guest.php";
 
 use App\Middlewares\Middlewares as Middleware;
 
-const ROOT = "http://localhost:8040/router/examples";
+const ROOT = "http://localhost/router/examples";
 
 $router = new Router(ROOT);
 $router->namespace("App\Controllers");

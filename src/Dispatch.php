@@ -43,7 +43,7 @@ abstract class Dispatch
     public function __construct(string $projectUrl)
     {
         $this->projectUrl = $this->validateUrl($projectUrl);
-        $this->requestUri = rtrim(filter_input(INPUT_GET, "route", FILTER_SANITIZE_SPECIAL_CHARS), "/") ?? "/";
+        $this->requestUri = rtrim(filter_input(INPUT_GET, "route", FILTER_SANITIZE_SPECIAL_CHARS) ?? "/", "/") ?? "/";
         $this->requestMethod = $_SERVER["REQUEST_METHOD"];
     }
 
@@ -123,7 +123,7 @@ abstract class Dispatch
         foreach ($middlewares as $middleware) {
             if (class_exists($middleware)) {
                 $newMiddleware = new $middleware;
-                if (!$newMiddleware->handle($this->route["data"] ?? [])) {
+                if (!$newMiddleware->handle($this->routeData($this->route["data"]) ?? [])) {
                     return false;
                 }
             }
