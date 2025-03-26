@@ -37,5 +37,4 @@ if ($router->error) {
     $router->redirect("web.error", ["errcode" => $router->error]);
 }
 
-
 ob_end_flush();

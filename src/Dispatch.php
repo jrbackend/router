@@ -182,6 +182,7 @@ abstract class Dispatch
 
         $verbs = ["PUT", "PATCH", "DELETE"];
         if (array_find($verbs, fn(string $verb) => $verb == $this->requestMethod)) {
+            $this->data = [];
             $this->parseRequest = true;
             return;
         }
